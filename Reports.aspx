@@ -16,12 +16,12 @@
         <tr>
             <td cstyle="text-align: center" class="text-center">
                 <strong>
-                <input type="submit" name="ctl00$MainContent$Button1" value="Employees By Department Report" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$MainContent$Button1&quot;, &quot;&quot;, false, &quot;&quot;, &quot;EWTA_EmployeesByDepartment.aspx&quot;, false, false))" id="MainContent_Button1" style="width:330px;font-size: small; font-weight: bold">
+                <asp:Button ID="Button1" runat="server" Text="Employees By Department Report" PostBackUrl="~/EmployeesByDepartment.aspx" style="width:330px;font-size: small; font-weight: bold" />
                 </strong>
             </td>
             <td cstyle="text-align: center" class="text-center">
                 <strong>
-                <input type="submit" name="ctl00$MainContent$Button2" value="Wages By Employee Report" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$MainContent$Button2&quot;, &quot;&quot;, false, &quot;&quot;, &quot;EWTA_WagesByEmployee.aspx&quot;, false, false))" id="MainContent_Button2" style="width:330px;margin-top: 0; font-size: small; font-weight: bold;">
+                <asp:Button ID="Button2" runat="server" Text="Wages By Employee Report" PostBackUrl="~/WagesByEmployee.aspx" style="width:330px;margin-top: 0; font-size: small; font-weight: bold;" />
                 </strong>
             </td>
         </tr>
@@ -32,12 +32,12 @@
         <tr>
             <td style="text-align: center">
                 <strong>
-                <input type="submit" name="ctl00$MainContent$Button4" value="Employee Wage Graph By Year" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$MainContent$Button4&quot;, &quot;&quot;, false, &quot;&quot;, &quot;EWTA_WageTotalGraphByYear.aspx&quot;, false, false))" id="MainContent_Button4" style="width:330px;font-size: small; font-weight: bold">
+                <asp:Button ID="Button4" runat="server" Text="Employee Wage Graph By Year" PostBackUrl="~/WageTotalGraphByYear.aspx" style="width:330px;font-size: small; font-weight: bold" />
                 </strong>
             </td>
             <td style="text-align: center">
                 <strong>
-                <input type="submit" name="ctl00$MainContent$Button3" value="Employee Communication Report" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$MainContent$Button3&quot;, &quot;&quot;, false, &quot;&quot;, &quot;EWTA_EmployeeComReport.aspx&quot;, false, false))" id="MainContent_Button3" style="width:330px;font-size: small; font-weight: bold">
+                <asp:Button ID="Button3" runat="server" Text="Employee Communication Report" PostBackUrl="~/EmployeeComReport.aspx" style="width:330px;font-size: small; font-weight: bold" />
                 </strong>
             </td>
         </tr>
@@ -50,12 +50,12 @@
         <tr>
             <td style="text-align: center">
                 <strong>
-                <input type="submit" name="ctl00$MainContent$Button5" value="Wage Graph By Employee " onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$MainContent$Button5&quot;, &quot;&quot;, false, &quot;&quot;, &quot;EWTA_WageTotalGraphByEmployee.aspx&quot;, false, false))" id="MainContent_Button5" style="width:330px;font-size: small; font-weight: bold">
+                <asp:Button ID="Button5" runat="server" Text="Wage Graph By Employee " PostBackUrl="~/WageTotalGraphByEmployee.aspx" style="width:330px;font-size: small; font-weight: bold" />
                 </strong>
             </td>
             <td style="text-align: center">
                 <strong>
-                <input type="submit" name="ctl00$MainContent$Button6" value="Employee Resign Report" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$MainContent$Button6&quot;, &quot;&quot;, false, &quot;&quot;, &quot;EWTA_EmployeeResignReport.aspx&quot;, false, false))" id="MainContent_Button6" style="width:330px;font-size: small; font-weight: bold">
+                <asp:Button ID="Button6" runat="server" Text="Employee Resign Report" PostBackUrl="~/EmployeeResignReport.aspx" style="width:330px;font-size: small; font-weight: bold" />
                 </strong>
             </td>
         </tr>
@@ -74,4 +74,3 @@
     </tbody>
     </table>
 </asp:Content>
-

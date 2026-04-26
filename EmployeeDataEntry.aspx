@@ -12,142 +12,148 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td style="width: 168px">First Name:</td>
+            <td style="width: 168px"><strong>First Name:</strong></td>
             <td style="width: 135px">
-                        <input name="ctl00$MainContent$TextBox1" type="text" id="MainContent_TextBox1">
+                        &nbsp;<asp:TextBox ID="TextBox1" runat="server" Width="205px"></asp:TextBox>
                     </td>
             <td style="width: 158px">Last Name:</td>
             <td>
-                        <input name="ctl00$MainContent$TextBox2" type="text" id="MainContent_TextBox2">
+                        &nbsp;<asp:TextBox ID="TextBox2" runat="server" Width="158px"></asp:TextBox>
                     </td>
         </tr>
         <tr>
             <td style="width: 168px">Birth Date:</td>
             <td style="width: 135px">
-                        <input name="ctl00$MainContent$TextBox3" type="date" id="MainContent_TextBox3">
+                        &nbsp;<asp:TextBox ID="TextBox10" runat="server" TextMode="Date"></asp:TextBox>
                     </td>
             <td style="width: 158px">Start Date:</td>
             <td>
-                        <input name="ctl00$MainContent$TextBox4" type="date" id="MainContent_TextBox4">
+                        &nbsp;<asp:TextBox ID="TextBox13" runat="server" TextMode="Date"></asp:TextBox>
                     </td>
         </tr>
         <tr>
             <td style="height: 20px; width: 168px;">Gender:</td>
             <td style="height: 20px; width: 135px;">
-                        <table id="MainContent_RadioButtonList1">
-	<tbody><tr>
-		<td><input id="MainContent_RadioButtonList1_0" type="radio" name="ctl00$MainContent$RadioButtonList1" value="1" onclick="javascript:setTimeout('__doPostBack(\'ctl00$MainContent$RadioButtonList1$0\',\'\')', 0)"><label for="MainContent_RadioButtonList1_0">Woman</label></td>
-	</tr><tr>
-		<td><input id="MainContent_RadioButtonList1_1" type="radio" name="ctl00$MainContent$RadioButtonList1" value="2" onclick="javascript:setTimeout('__doPostBack(\'ctl00$MainContent$RadioButtonList1$1\',\'\')', 0)"><label for="MainContent_RadioButtonList1_1">Man</label></td>
-	</tr>
-</tbody></table>
+                        <asp:RadioButtonList ID="RadioButtonList1" runat="server">
+                            <asp:ListItem Value="1">Male</asp:ListItem>
+                            <asp:ListItem Value="2">Female</asp:ListItem>
+                        </asp:RadioButtonList>
                     </td>
             <td style="height: 20px; width: 158px;">Is Employee Active?</td>
             <td style="height: 20px">
-                        <input id="MainContent_CheckBox1" type="checkbox" name="ctl00$MainContent$CheckBox1">
+                        &nbsp;<asp:CheckBox ID="CheckBox1" runat="server" />
                     </td>
         </tr>
         <tr>
             <td style="height: 20px; width: 168px;">Title:</td>
             <td style="height: 20px; width: 135px;">
-                        <select name="ctl00$MainContent$DropDownList3" onchange="javascript:setTimeout('__doPostBack(\'ctl00$MainContent$DropDownList3\',\'\')', 0)" id="MainContent_DropDownList3">
-	<option value="1">DBA</option>
-	<option value="2">Manager</option>
-	<option value="3">Accountant</option>
-	<option value="4">Sales Rep</option>
-	<option value="5">CIO</option>
-	<option value="6">CEO</option>
-
-</select>
+                        &nbsp;<asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="Dept_ID" DataValueField="Dept_ID">
+                        </asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT DISTINCT [Dept_ID] FROM [tbl_Employees]"></asp:SqlDataSource>
                     </td>
             <td style="height: 20px; width: 158px;">Department:</td>
             <td style="height: 20px">
-                        <select name="ctl00$MainContent$DropDownList4" onchange="javascript:setTimeout('__doPostBack(\'ctl00$MainContent$DropDownList4\',\'\')', 0)" id="MainContent_DropDownList4">
-	<option value="1">Data Processing</option>
-	<option value="2">Marketing</option>
-	<option value="3">Sales</option>
-	<option value="4">Accounting</option>
-	<option value="5">Finance</option>
-	<option value="6">Production</option>
-
-</select>
+                        &nbsp;<asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource3" DataTextField="Dept_Name" DataValueField="Dept_ID">
+                        </asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT DISTINCT [Dept_Name], [Dept_ID] FROM [tbl_Departments]"></asp:SqlDataSource>
                     </td>
         </tr>
         <tr>
             <td style="width: 168px">Email:</td>
             <td style="width: 135px">
-                        <input name="ctl00$MainContent$TextBox5" type="email" id="MainContent_TextBox5" style="width:372px;">
+                        &nbsp;<asp:TextBox ID="TextBox9" runat="server" Width="210px"></asp:TextBox>
                     </td>
             <td style="width: 158px">Cell Phone:</td>
             <td>
-                        <input name="ctl00$MainContent$TextBox6" type="tel" id="MainContent_TextBox6" style="width:246px;">
+                        &nbsp;<asp:TextBox ID="TextBox4" runat="server" Width="154px"></asp:TextBox>
                     </td>
         </tr>
         <tr>
             <td style="width: 168px">Address:</td>
-            <td colspan="3">
-                        <input name="ctl00$MainContent$TextBox7" type="text" id="MainContent_TextBox7" style="width:1030px;">
+            <td>
+                        &nbsp;<asp:TextBox ID="TextBox7" runat="server" Width="316px"></asp:TextBox>
                     </td>
+            <td>
+                        &nbsp;</td>
+            <td>
+                        &nbsp;</td>
         </tr>
         <tr>
             <td style="height: 20px; width: 168px;">City:</td>
             <td style="height: 20px; width: 135px;">
-                        <select name="ctl00$MainContent$DropDownList1" onchange="javascript:setTimeout('__doPostBack(\'ctl00$MainContent$DropDownList1\',\'\')', 0)" id="MainContent_DropDownList1">
-	<option value="Kavacık">Kavacık</option>
-	<option value="Sincan">Sincan</option>
-	<option value="Kdz. Ereğli">Kdz. Ereğli</option>
-	<option value="Alaplı">Alaplı</option>
-	<option value="Şişli">Şişli</option>
-	<option value="Ataşehir">Ataşehir</option>
-	<option value="Beykoz">Beykoz</option>
-	<option value="Nülifer">Nülifer</option>
-	<option value="Develi">Develi</option>
-	<option value="Devrek">Devrek</option>
-	<option value="Çaycuma">Çaycuma</option>
-	<option value="Kilimli">Kilimli</option>
-
-</select>
+                        &nbsp;<asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
                     </td>
             <td style="height: 20px; width: 158px;">Province:</td>
             <td style="height: 20px">
-                        <select name="ctl00$MainContent$DropDownList2" onchange="javascript:setTimeout('__doPostBack(\'ctl00$MainContent$DropDownList2\',\'\')', 0)" id="MainContent_DropDownList2">
-	<option value="İstanbul">İstanbul</option>
-	<option value="Ankara">Ankara</option>
-	<option value="Bursa">Bursa</option>
-	<option value="Zonguldak">Zonguldak</option>
-	<option value="Sakarya">Sakarya</option>
-	<option value="İzmir">İzmir</option>
-	<option value="Kocaeli">Kocaeli</option>
-	<option value="Bartın">Bartın</option>
-	<option value="Ağrı">Ağrı</option>
-	<option value="Kayseri">Kayseri</option>
-	<option value="Adana">Adana</option>
-	<option value="Niğde">Niğde</option>
-
-</select>
+                        &nbsp;<asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
                     </td>
         </tr>
         <tr>
             <td style="width: 168px">CV Info:</td>
-            <td colspan="3">
-                        <textarea name="ctl00$MainContent$TextBox8" rows="2" cols="20" id="MainContent_TextBox8" style="height:103px;width:1031px;"></textarea>
+            <td>
+                        &nbsp;<asp:TextBox ID="TextBox12" runat="server" Height="112px" Width="543px"></asp:TextBox>
                     </td>
+            <td>
+                        &nbsp;</td>
+            <td>
+                        &nbsp;</td>
         </tr>
         <tr>
             <td style="width: 168px">&nbsp;</td>
-            <td style="width: 135px">&nbsp;</td>
+            <td style="width: 135px">
+                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+            </td>
             <td style="width: 158px">&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td style="width: 168px">&nbsp;</td>
             <td style="width: 135px">
-                        <input type="submit" name="ctl00$MainContent$Button2" value="Save Record" id="MainContent_Button2" style="width:178px;">
-                    </td>
+                        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" Text="Save Record" />
+&nbsp;</td>
             <td style="width: 158px">
-                        <input type="submit" name="ctl00$MainContent$Button1" value="Close Form" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$MainContent$Button1&quot;, &quot;&quot;, false, &quot;&quot;, &quot;EWTA_Forms.aspx&quot;, false, false))" id="MainContent_Button1" style="width:178px;">
+                        &nbsp;<asp:Button ID="Button2" runat="server" Text="Close Form" />
                     </td>
-            <td>&nbsp;</td>
+            <td>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" DeleteCommand="DELETE FROM [tbl_Employees] WHERE [Empl_ID] = @Empl_ID" InsertCommand="INSERT INTO [tbl_Employees] ([Empl_FName], [Empl_LName], [Empl_BDate], [Empl_Start_Date], [Empl_Address], [Empl_City], [Empl_Province], [Empl_Cell], [Dept_ID], [Gender_ID], [Title_ID], [Empl_Email], [Is_Empl_Active], [Empl_CV]) VALUES (@Empl_FName, @Empl_LName, @Empl_BDate, @Empl_Start_Date, @Empl_Address, @Empl_City, @Empl_Province, @Empl_Cell, @Dept_ID, @Gender_ID, @Title_ID, @Empl_Email, @Is_Empl_Active, @Empl_CV)" SelectCommand="SELECT [Empl_ID], [Empl_FName], [Empl_LName], [Empl_BDate], [Empl_Start_Date], [Empl_Address], [Empl_City], [Empl_Province], [Empl_Cell], [Dept_ID], [Gender_ID], [Title_ID], [Empl_Email], [Is_Empl_Active], [Empl_CV] FROM [tbl_Employees]" UpdateCommand="UPDATE [tbl_Employees] SET [Empl_FName] = @Empl_FName, [Empl_LName] = @Empl_LName, [Empl_BDate] = @Empl_BDate, [Empl_Start_Date] = @Empl_Start_Date, [Empl_Address] = @Empl_Address, [Empl_City] = @Empl_City, [Empl_Province] = @Empl_Province, [Empl_Cell] = @Empl_Cell, [Dept_ID] = @Dept_ID, [Gender_ID] = @Gender_ID, [Title_ID] = @Title_ID, [Empl_Email] = @Empl_Email, [Is_Empl_Active] = @Is_Empl_Active, [Empl_CV] = @Empl_CV WHERE [Empl_ID] = @Empl_ID">
+                    <DeleteParameters>
+                        <asp:Parameter Name="Empl_ID" Type="Int32" />
+                    </DeleteParameters>
+                    <InsertParameters>
+                        <asp:Parameter Name="Empl_FName" Type="String" />
+                        <asp:Parameter Name="Empl_LName" Type="String" />
+                        <asp:Parameter DbType="Date" Name="Empl_BDate" />
+                        <asp:Parameter DbType="Date" Name="Empl_Start_Date" />
+                        <asp:Parameter Name="Empl_Address" Type="String" />
+                        <asp:Parameter Name="Empl_City" Type="String" />
+                        <asp:Parameter Name="Empl_Province" Type="String" />
+                        <asp:Parameter Name="Empl_Cell" Type="String" />
+                        <asp:Parameter Name="Dept_ID" Type="Int32" />
+                        <asp:Parameter Name="Gender_ID" Type="Int32" />
+                        <asp:Parameter Name="Title_ID" Type="Int32" />
+                        <asp:Parameter Name="Empl_Email" Type="String" />
+                        <asp:Parameter Name="Is_Empl_Active" Type="Boolean" />
+                        <asp:Parameter Name="Empl_CV" Type="String" />
+                    </InsertParameters>
+                    <UpdateParameters>
+                        <asp:Parameter Name="Empl_FName" Type="String" />
+                        <asp:Parameter Name="Empl_LName" Type="String" />
+                        <asp:Parameter DbType="Date" Name="Empl_BDate" />
+                        <asp:Parameter DbType="Date" Name="Empl_Start_Date" />
+                        <asp:Parameter Name="Empl_Address" Type="String" />
+                        <asp:Parameter Name="Empl_City" Type="String" />
+                        <asp:Parameter Name="Empl_Province" Type="String" />
+                        <asp:Parameter Name="Empl_Cell" Type="String" />
+                        <asp:Parameter Name="Dept_ID" Type="Int32" />
+                        <asp:Parameter Name="Gender_ID" Type="Int32" />
+                        <asp:Parameter Name="Title_ID" Type="Int32" />
+                        <asp:Parameter Name="Empl_Email" Type="String" />
+                        <asp:Parameter Name="Is_Empl_Active" Type="Boolean" />
+                        <asp:Parameter Name="Empl_CV" Type="String" />
+                        <asp:Parameter Name="Empl_ID" Type="Int32" />
+                    </UpdateParameters>
+                </asp:SqlDataSource>
+            </td>
         </tr>
         <tr>
             <td style="width: 168px">&nbsp;</td>
