@@ -8,28 +8,26 @@
             <td style="font-size: x-large"><strong>Employee Resign Report</strong></td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
+            <td>
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Empl_ID" DataSourceID="SqlDataSource1">
+                    <Columns>
+                        <asp:BoundField DataField="Empl_ID" HeaderText="Empl_ID" InsertVisible="False" ReadOnly="True" SortExpression="Empl_ID" />
+                        <asp:BoundField DataField="Empl_Name" HeaderText="Empl_Name" ReadOnly="True" SortExpression="Empl_Name" />
+                        <asp:BoundField DataField="Empl_Start_Date" HeaderText="Empl_Start_Date" SortExpression="Empl_Start_Date" />
+                        <asp:BoundField DataField="Empl_Left_Date" HeaderText="Empl_Left_Date" SortExpression="Empl_Left_Date" />
+                        <asp:BoundField DataField="Empl_Left_Reason" HeaderText="Empl_Left_Reason" SortExpression="Empl_Left_Reason" />
+                        <asp:BoundField DataField="Empl_Cell" HeaderText="Empl_Cell" SortExpression="Empl_Cell" />
+                        <asp:BoundField DataField="Empl_Email" HeaderText="Empl_Email" SortExpression="Empl_Email" />
+                        <asp:BoundField DataField="Dept_ID" HeaderText="Dept_ID" SortExpression="Dept_ID" />
+                        <asp:BoundField DataField="Title_ID" HeaderText="Title_ID" SortExpression="Title_ID" />
+                    </Columns>
+                </asp:GridView>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT Empl_ID, Empl_Name, Empl_Start_Date, Empl_Left_Date, Empl_Left_Reason, Empl_Cell, Empl_Email, Dept_ID, Title_ID FROM tbl_Employees WHERE (Is_Empl_Active = 0)"></asp:SqlDataSource>
+            </td>
         </tr>
         <tr>
             <td>
-                    <div>
-	<table cellspacing="0" rules="all" border="1" id="MainContent_GridView1" style="width:1021px;border-collapse:collapse;">
-		<tbody><tr>
-			<th scope="col"><a href="javascript:__doPostBack('ctl00$MainContent$GridView1','Sort$Empl_ID')">EmplID</a></th><th scope="col"><a href="javascript:__doPostBack('ctl00$MainContent$GridView1','Sort$Empl_Name')">Name</a></th><th scope="col"><a href="javascript:__doPostBack('ctl00$MainContent$GridView1','Sort$Empl_Start_Date')">Start Date</a></th><th scope="col"><a href="javascript:__doPostBack('ctl00$MainContent$GridView1','Sort$Empl_Left_Date')">Left Date</a></th><th scope="col"><a href="javascript:__doPostBack('ctl00$MainContent$GridView1','Sort$Empl_Left_Reason')">Resign Reason</a></th><th scope="col"><a href="javascript:__doPostBack('ctl00$MainContent$GridView1','Sort$Empl_Cell')">Cell Phone</a></th><th scope="col"><a href="javascript:__doPostBack('ctl00$MainContent$GridView1','Sort$Empl_Email')">Email</a></th><th scope="col"><a href="javascript:__doPostBack('ctl00$MainContent$GridView1','Sort$Dept_Name')">Department</a></th><th scope="col"><a href="javascript:__doPostBack('ctl00$MainContent$GridView1','Sort$Title')">Title</a></th>
-		</tr><tr>
-			<td>7</td><td>Ahmet Güzel</td><td>11.10.2023 00:00:00</td><td>11.10.2023 00:00:00</td><td>Insufficient wage</td><td>5371234567     </td><td>boguz@gmail.com</td><td>Marketing</td><td>Accountant</td>
-		</tr>
-	</tbody></table>
-</div>
-                </td>
-        </tr>
-        <tr>
-            <td style="height: 20px">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="submit" name="ctl00$MainContent$Button1" value="Close Report" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$MainContent$Button1&quot;, &quot;&quot;, false, &quot;&quot;, &quot;EWTA_Reports.aspx&quot;, false, false))" id="MainContent_Button1" style="width:125px;">
+                &nbsp;<asp:Button ID="Button1" runat="server" PostBackUrl="~/Reports.aspx" Text="Close Report" />
             </td>
         </tr>
         <tr>
@@ -39,10 +37,6 @@
         </tr>
     </tbody></table>
 
-            <hr>
-            <footer>
-                <p>© 2026 - ASP.NET Application</p>
-            </footer>
         </div>
 </asp:Content>
 

@@ -12,39 +12,17 @@
         </tr>
         <tr>
             <td>
-                    <div>
-	<table cellspacing="0" rules="all" border="1" id="MainContent_GridView1" style="width:1021px;border-collapse:collapse;">
-		<tbody><tr>
-			<th scope="col"><a href="javascript:__doPostBack('ctl00$MainContent$GridView1','Sort$Empl_ID')">EmplID</a></th><th scope="col"><a href="javascript:__doPostBack('ctl00$MainContent$GridView1','Sort$Empl_Name')">Name</a></th><th scope="col"><a href="javascript:__doPostBack('ctl00$MainContent$GridView1','Sort$Empl_Phone')">Work Phone</a></th><th scope="col"><a href="javascript:__doPostBack('ctl00$MainContent$GridView1','Sort$Empl_Cell')">Cell Phone</a></th><th scope="col"><a href="javascript:__doPostBack('ctl00$MainContent$GridView1','Sort$Empl_Email')">Email</a></th><th scope="col"><a href="javascript:__doPostBack('ctl00$MainContent$GridView1','Sort$Dept_Name')">Department</a></th>
-		</tr><tr>
-			<td>17</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Data Processing</td>
-		</tr><tr>
-			<td>1</td><td>Mustafa Çoruh</td><td>123 333 5555   </td><td>5371234567     </td><td>boguz@gmail.com</td><td>Marketing</td>
-		</tr><tr>
-			<td>2</td><td>Burak Oguz</td><td>123 444 6666   </td><td>5371234567     </td><td>boguz@gmail.com</td><td>Marketing</td>
-		</tr><tr>
-			<td>3</td><td>Nazife Çoruh</td><td>123 666 8888   </td><td>222222222      </td><td>mc@mc.com</td><td>Data Processing</td>
-		</tr><tr>
-			<td>4</td><td>Burak Tanış</td><td>123 999 0000   </td><td>5371234567     </td><td>boguz@gmail.com</td><td>Marketing</td>
-		</tr><tr>
-			<td>6</td><td>Ahmet Oguz</td><td>&nbsp;</td><td>5371234567     </td><td>boguz@gmail.com</td><td>Marketing</td>
-		</tr><tr>
-			<td>7</td><td>Ahmet Güzel</td><td>&nbsp;</td><td>5371234567     </td><td>boguz@gmail.com</td><td>Marketing</td>
-		</tr><tr>
-			<td>8</td><td>Nihal Diniz</td><td>&nbsp;</td><td>5371234567     </td><td>boguz@gmail.com</td><td>Marketing</td>
-		</tr><tr>
-			<td>9</td><td>Buğra Kayılı</td><td>&nbsp;</td><td>5371234567     </td><td>boguz@gmail.com</td><td>Marketing</td>
-		</tr><tr>
-			<td>12</td><td>Mustafa Can</td><td>&nbsp;</td><td>67300          </td><td>mustafa.coruh@nisantasi.edu.tr</td><td>Data Processing</td>
-		</tr><tr>
-			<td colspan="6"><table>
-				<tbody><tr>
-					<td><span>1</span></td><td><a href="javascript:__doPostBack('ctl00$MainContent$GridView1','Page$2')">2</a></td>
-				</tr>
-			</tbody></table></td>
-		</tr>
-	</tbody></table>
-</div>
+                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Empl_ID" DataSourceID="SqlDataSource1" Width="942px">
+                        <Columns>
+                            <asp:BoundField DataField="Empl_ID" HeaderText="Empl_ID" ReadOnly="True" SortExpression="Empl_ID" />
+                            <asp:BoundField DataField="Empl_Name" HeaderText="Empl_Name" ReadOnly="True" SortExpression="Empl_Name" />
+                            <asp:BoundField DataField="Empl_Phone" HeaderText="Empl_Phone" SortExpression="Empl_Phone" />
+                            <asp:BoundField DataField="Empl_Cell" HeaderText="Empl_Cell" SortExpression="Empl_Cell" />
+                            <asp:BoundField DataField="Empl_Email" HeaderText="Empl_Email" SortExpression="Empl_Email" />
+                            <asp:BoundField DataField="Department" HeaderText="Department" SortExpression="Department" />
+                        </Columns>
+                    </asp:GridView>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [Empl_ID], [Empl_Name], [Empl_Phone], [Empl_Cell], [Empl_Email], [Department] FROM [vw_EmployeeCommunication]"></asp:SqlDataSource>
                 </td>
         </tr>
         <tr>
@@ -53,8 +31,8 @@
         </tr>
         <tr>
             <td>
-                <input type="submit" name="ctl00$MainContent$Button1" value="Close Report" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$MainContent$Button1&quot;, &quot;&quot;, false, &quot;&quot;, &quot;EWTA_Reports.aspx&quot;, false, false))" id="MainContent_Button1" style="width:125px;">
-            </td>
+                <asp:Button ID="Button1" runat="server" PostBackUrl="~/Reports.aspx" Text="Close Report" />
+&nbsp;</td>
         </tr>
         <tr>
             <td>
@@ -63,10 +41,6 @@
         </tr>
     </tbody></table>
 
-            <hr>
-            <footer>
-                <p>© 2026 - ASP.NET Application</p>
-            </footer>
         </div>
 </asp:Content>
 

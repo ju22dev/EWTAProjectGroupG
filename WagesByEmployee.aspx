@@ -9,27 +9,28 @@
         </tr>
         <tr>
             <td><strong><span style="font-size: large">Choose an Employee:</span> </strong>
-                        <select name="ctl00$MainContent$DropDownList1" onchange="javascript:setTimeout('__doPostBack(\'ctl00$MainContent$DropDownList1\',\'\')', 0)" id="MainContent_DropDownList1" style="height:20px;width:186px;">
-	<option selected="selected" value="17"></option>
-	<option value="1">Mustafa Çoruh</option>
-	<option value="2">Burak Oguz</option>
-	<option value="3">Nazife Çoruh</option>
-	<option value="4">Burak Tanış</option>
-	<option value="6">Ahmet Oguz</option>
-	<option value="7">Ahmet Güzel</option>
-	<option value="8">Nihal Diniz</option>
-	<option value="9">Buğra Kayılı</option>
-	<option value="12">Mustafa Can</option>
-	<option value="13">Ahmet Rıza</option>
-	<option value="14">Nazlı Denz</option>
-	<option value="15">Seral Coruk</option>
-	<option value="16">Kenan Yıldız</option>
-
-</select>
-                    </td>
+                        <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="Empl_Name" DataValueField="Empl_ID">
+                </asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [Empl_ID], [Empl_Name] FROM [tbl_Employees]"></asp:SqlDataSource>
+&nbsp;</td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
+            <td>
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Wage_ID" DataSourceID="SqlDataSource2" Width="802px">
+                    <Columns>
+                        <asp:BoundField DataField="Wage_ID" HeaderText="Wage_ID" InsertVisible="False" ReadOnly="True" SortExpression="Wage_ID" />
+                        <asp:BoundField DataField="Wage_Date" HeaderText="Wage_Date" SortExpression="Wage_Date" />
+                        <asp:BoundField DataField="Wage_Total" HeaderText="Wage_Total" ReadOnly="True" SortExpression="Wage_Total" />
+                        <asp:BoundField DataField="Month_ID" HeaderText="Month_ID" SortExpression="Month_ID" />
+                        <asp:BoundField DataField="Wage_Year" HeaderText="Wage_Year" ReadOnly="True" SortExpression="Wage_Year" />
+                    </Columns>
+                </asp:GridView>
+                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [Wage_ID], [Wage_Date], [Wage_Total], [Month_ID], [Wage_Year] FROM [tbl_Wages] WHERE ([Empl_ID] = @Empl_ID)">
+                    <SelectParameters>
+                        <asp:ControlParameter ControlID="DropDownList1" DefaultValue="1" Name="Empl_ID" PropertyName="SelectedValue" Type="Int32" />
+                    </SelectParameters>
+                </asp:SqlDataSource>
+            </td>
         </tr>
         <tr>
             <td>
@@ -43,8 +44,8 @@
         </tr>
         <tr>
             <td>
-                        <input type="submit" name="ctl00$MainContent$Button1" value="Close Report" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$MainContent$Button1&quot;, &quot;&quot;, false, &quot;&quot;, &quot;EWTA_Reports.aspx&quot;, false, false))" id="MainContent_Button1" style="width:178px;font-weight: bold">
-                        </td>
+                        <asp:Button ID="Button1" runat="server" PostBackUrl="~/Reports.aspx" Text="Close Report" />
+&nbsp;</td>
         </tr>
         <tr>
             <td style="height: 20px">
@@ -58,10 +59,6 @@
         </tr>
     </tbody></table>
 
-            <hr>
-            <footer>
-                <p>© 2026 - ASP.NET Application</p>
-            </footer>
         </div>
 </asp:Content>
 
