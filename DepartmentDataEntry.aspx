@@ -21,10 +21,10 @@
                             <asp:BoundField DataField="Dept_ID" HeaderText="Dept_ID" InsertVisible="False" ReadOnly="True" SortExpression="Dept_ID" />
                             <asp:BoundField DataField="Dept_Name" HeaderText="Dept_Name" SortExpression="Dept_Name" />
                             <asp:BoundField DataField="Dept_Phone" HeaderText="Dept_Phone" SortExpression="Dept_Phone" />
-                            <asp:BoundField DataField="Empl_Name" HeaderText="Empl_Name" ReadOnly="True" SortExpression="Empl_Name" />
+                            <asp:BoundField DataField="Manager_ID" HeaderText="Manager_ID" SortExpression="Manager_ID" />
                         </Columns>
                     </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" DeleteCommand="DELETE FROM [tbl_Departments] WHERE [Dept_ID] = @Dept_ID" InsertCommand="INSERT INTO [tbl_Departments] ([Dept_Name], [Dept_Phone], [Manager_ID]) VALUES (@Dept_Name, @Dept_Phone, @Manager_ID)" SelectCommand="SELECT tbl_Departments.Dept_ID, tbl_Departments.Dept_Name, tbl_Departments.Dept_Phone, tbl_Employees.Empl_Name FROM tbl_Departments INNER JOIN tbl_Employees ON tbl_Departments.Dept_ID = tbl_Employees.Dept_ID WHERE (tbl_Employees.Is_Empl_Manager = 1)" UpdateCommand="UPDATE [tbl_Departments] SET [Dept_Name] = @Dept_Name, [Dept_Phone] = @Dept_Phone, [Manager_ID] = @Manager_ID WHERE [Dept_ID] = @Dept_ID">
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" DeleteCommand="DELETE FROM [tbl_Departments] WHERE [Dept_ID] = @Dept_ID" InsertCommand="INSERT INTO [tbl_Departments] ([Dept_Name], [Dept_Phone], [Manager_ID]) VALUES (@Dept_Name, @Dept_Phone, @Manager_ID)" SelectCommand="SELECT [Dept_ID], [Dept_Name], [Dept_Phone], [Manager_ID] FROM [tbl_Departments]" UpdateCommand="UPDATE [tbl_Departments] SET [Dept_Name] = @Dept_Name, [Dept_Phone] = @Dept_Phone, [Manager_ID] = @Manager_ID WHERE [Dept_ID] = @Dept_ID">
                         <DeleteParameters>
                             <asp:Parameter Name="Dept_ID" Type="Int32" />
                         </DeleteParameters>
@@ -68,7 +68,7 @@
                     <td>
                         <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="Empl_Name" DataValueField="Empl_ID">
                         </asp:DropDownList>
-                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [Empl_ID], [Empl_Name] FROM [tbl_Employees]"></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT Empl_ID, Empl_Name FROM tbl_Employees WHERE (Is_Empl_Manager = 1)"></asp:SqlDataSource>
                     </td>
                 </tr>
             </table>

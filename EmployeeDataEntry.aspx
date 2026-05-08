@@ -12,7 +12,7 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td style="width: 168px"><strong>First Name:</strong></td>
+            <td style="width: 168px">First Name:</td>
             <td style="width: 135px">
                         &nbsp;<asp:TextBox ID="TextBox1" runat="server" Width="205px"></asp:TextBox>
                     </td>
@@ -47,9 +47,9 @@
         <tr>
             <td style="height: 20px; width: 168px;">Title:</td>
             <td style="height: 20px; width: 135px;">
-                        &nbsp;<asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="Dept_ID" DataValueField="Dept_ID">
+                        &nbsp;<asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource4" DataTextField="Title" DataValueField="LK_ID">
                         </asp:DropDownList>
-                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT DISTINCT [Dept_ID] FROM [tbl_Employees]"></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [LK_ID], [Title] FROM [tbl_Lookups]"></asp:SqlDataSource>
                     </td>
             <td style="height: 20px; width: 158px;">Department:</td>
             <td style="height: 20px">
@@ -99,12 +99,12 @@
                         &nbsp;</td>
         </tr>
         <tr>
-            <td style="width: 168px">&nbsp;</td>
-            <td style="width: 135px">
-                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+            <td style="width: 168px; height: 19px;"></td>
+            <td style="width: 135px; height: 19px;">
+                <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
             </td>
-            <td style="width: 158px">&nbsp;</td>
-            <td>&nbsp;</td>
+            <td style="width: 158px; height: 19px;"></td>
+            <td style="height: 19px"></td>
         </tr>
         <tr>
             <td style="width: 168px">&nbsp;</td>

@@ -16,14 +16,23 @@
         </tr>
         <tr>
             <td>
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Wage_ID" DataSourceID="SqlDataSource2" Width="802px">
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Wage_ID" DataSourceID="SqlDataSource2" Width="802px" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3">
                     <Columns>
-                        <asp:BoundField DataField="Wage_ID" HeaderText="Wage_ID" InsertVisible="False" ReadOnly="True" SortExpression="Wage_ID" />
-                        <asp:BoundField DataField="Wage_Date" HeaderText="Wage_Date" SortExpression="Wage_Date" />
-                        <asp:BoundField DataField="Wage_Total" HeaderText="Wage_Total" ReadOnly="True" SortExpression="Wage_Total" />
-                        <asp:BoundField DataField="Month_ID" HeaderText="Month_ID" SortExpression="Month_ID" />
-                        <asp:BoundField DataField="Wage_Year" HeaderText="Wage_Year" ReadOnly="True" SortExpression="Wage_Year" />
+                        <asp:BoundField DataField="Wage_ID" HeaderText="Wage ID" InsertVisible="False" ReadOnly="True" SortExpression="Wage_ID" />
+                        <asp:BoundField DataField="Wage_Date" HeaderText="Paid Date" SortExpression="Wage_Date" />
+                        <asp:BoundField DataField="Wage_Total" HeaderText="Wage Total" ReadOnly="True" SortExpression="Wage_Total" />
+                        <asp:BoundField DataField="Month_ID" HeaderText="Month" SortExpression="Month_ID" />
+                        <asp:BoundField DataField="Wage_Year" HeaderText="Year" ReadOnly="True" SortExpression="Wage_Year" />
                     </Columns>
+                    <FooterStyle BackColor="White" ForeColor="#000066" />
+                    <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
+                    <RowStyle ForeColor="#000066" />
+                    <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                    <SortedAscendingHeaderStyle BackColor="#007DBB" />
+                    <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                    <SortedDescendingHeaderStyle BackColor="#00547E" />
                 </asp:GridView>
                 <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [Wage_ID], [Wage_Date], [Wage_Total], [Month_ID], [Wage_Year] FROM [tbl_Wages] WHERE ([Empl_ID] = @Empl_ID)">
                     <SelectParameters>

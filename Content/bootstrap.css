@@ -2349,7 +2349,8 @@ pre code {
 }
 table {
   background-color: transparent;
-    }
+    font-size: x-small;
+}
 table col[class*="col-"] {
   position: static;
   display: table-column;
@@ -4184,7 +4185,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   margin-left: 0;
 }
 .nav-justified {
-  width: 100%;
+  width: 99%;
 }
 .nav-justified > li {
   float: none;

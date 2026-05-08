@@ -48,7 +48,7 @@
         <tr>
             <td style="text-align: center">
                 <strong>
-                <input type="submit" name="ctl00$MainContent$Button6" value="Employee Data Entry Wizard Form" id="MainContent_Button6" style="width:330px;font-weight: bold; font-size: small">
+                <input type="submit" name="ctl00$MainContent$Button6" value="Employee Data Entry Wizard Form" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$MainContent$Button4&quot;, &quot;&quot;, false, &quot;&quot;, &quot;EmployeeDataEntryWizard.aspx&quot;, false, false))" id="MainContent_Button6" style="width:330px;font-weight: bold; font-size: small">
                 </strong>
             </td>
             <td style="text-align: center">

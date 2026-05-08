@@ -5,51 +5,65 @@
             
     <table class="nav-justified">
         <tbody><tr>
-            <td style="font-size: large"><strong>Employee Wage Totals Graph By Year</strong></td>
+            <td style="font-size: large; width: 451px;"><strong>Employee Wage Totals Graph By Year</strong></td>
+            <td style="font-size: large">&nbsp;</td>
         </tr>
         <tr>
-            <td><strong><span style="font-size: large">Year:</span> </strong>
-                    <select name="ctl00$MainContent$DropDownList1" onchange="javascript:setTimeout('__doPostBack(\'ctl00$MainContent$DropDownList1\',\'\')', 0)" id="MainContent_DropDownList1">
-	<option selected="selected" value="2021">2021</option>
-	<option value="2022">2022</option>
-	<option value="2023">2023</option>
-	<option value="2026">2026</option>
-
-</select>
+            <td style="height: 20px; width: 451px">
                 </td>
+            <td style="height: 20px">&nbsp;</td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
+            <td style="width: 451px">Choose a year: </td>
             <td>
-                    <img id="MainContent_Chart1" src="/WEBDers/ChartImg.axd?i=chart_a2177fc97f104593b6f098b249e24b01_0.png&amp;g=5c7f3ab40fda4a09b3848ccfea7d17ed" alt="" style="height:300px;width:523px;border-width:0px;">
-                </td>
+                <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="Wage_Year" DataValueField="Wage_Year">
+                </asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT Wage_Year FROM vw_EmployeeYearlyWages GROUP BY Wage_Year"></asp:SqlDataSource>
+            </td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
+            <td style="width: 451px">
+                    &nbsp;</td>
             <td>
-            <input type="submit" name="ctl00$MainContent$Button1" value="Close Report" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$MainContent$Button1&quot;, &quot;&quot;, false, &quot;&quot;, &quot;EWTA_Reports.aspx&quot;, false, false))" id="MainContent_Button1" style="width:181px;">
-                    </td>
+                    &nbsp;</td>
         </tr>
         <tr>
+            <td colspan="2">
+                <asp:Chart ID="Chart1" runat="server" DataSourceID="SqlDataSource2" Width="478px">
+                    <Series>
+                        <asp:Series Name="Series1" XValueMember="Empl_Name" YValueMembers="WageTotal">
+                        </asp:Series>
+                    </Series>
+                    <ChartAreas>
+                        <asp:ChartArea Name="ChartArea1">
+                        </asp:ChartArea>
+                    </ChartAreas>
+                </asp:Chart>
+                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [Empl_Name], [WageTotal], [Wage_Year] FROM [vw_EmployeeYearlyWages] WHERE ([Wage_Year] = @Wage_Year)">
+                    <SelectParameters>
+                        <asp:ControlParameter ControlID="DropDownList1" Name="Wage_Year" PropertyName="SelectedValue" Type="Int32" />
+                    </SelectParameters>
+                </asp:SqlDataSource>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 451px">
+                &nbsp;</td>
             <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width: 451px">
+                    
+                    <asp:Button ID="Button1" runat="server" PostBackUrl="~/Reports.aspx" Text="Close Report" />
                     
                     </td>
-        </tr>
-        <tr>
             <td>
                     
-                </td>
+                    &nbsp;</td>
         </tr>
-    </tbody></table>
-
-            <hr>
-            <footer>
-                <p>© 2026 - ASP.NET Application</p>
-            </footer>
+    </tbody>
+        </table>
         </div>
 </asp:Content>
 

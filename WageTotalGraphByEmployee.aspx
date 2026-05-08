@@ -1,59 +1,75 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="WageTotalGraphByEmployee.aspx.cs" Inherits="WageTotalGraphByEmployee" %>
 
+<%@ Register assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" namespace="System.Web.UI.DataVisualization.Charting" tagprefix="asp" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
     <div class="container body-content">
             
     <table class="nav-justified">
         <tbody><tr>
-            <td style="font-size: large"><strong>Wage Totals Graph By Employee </strong></td>
+            <td style="font-size: large; width: 373px;"><strong>Wage Totals Graph By Employee </strong></td>
+            <td style="font-size: large">&nbsp;</td>
         </tr>
         <tr>
-            <td><strong><span style="font-size: large">Employee:</span> </strong>
-                    <select name="ctl00$MainContent$DropDownList1" onchange="javascript:setTimeout('__doPostBack(\'ctl00$MainContent$DropDownList1\',\'\')', 0)" id="MainContent_DropDownList1" style="height:17px;width:153px;">
-	<option selected="selected" value="1">Mustafa Çoruh</option>
-	<option value="2">Burak Oguz</option>
-	<option value="3">Nazife Çoruh</option>
-	<option value="4">Burak Tanış</option>
-	<option value="7">Ahmet Güzel</option>
-	<option value="8">Nihal Diniz</option>
-	<option value="9">Buğra Kayılı</option>
-	<option value="12">Mustafa Can</option>
-
-</select>
-                </td>
-        </tr>
-        <tr>
+            <td style="width: 373px">&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
+            <td style="width: 373px">Choose an Employee: </td>
             <td>
-                    <img id="MainContent_Chart1" src="/WEBDers/ChartImg.axd?i=chart_a2177fc97f104593b6f098b249e24b01_0.png&amp;g=345fcfc05d9646d69955a48b8c0fee5f" alt="" style="height:300px;width:523px;border-width:0px;">
+                <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="Empl_Name" DataValueField="Empl_Name">
+                </asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT Empl_Name FROM vw_EmployeeYearlyWages GROUP BY Empl_Name"></asp:SqlDataSource>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                    <asp:Chart ID="Chart1" runat="server" DataSourceID="SqlDataSource2" Width="510px">
+                        <series>
+                            <asp:Series Name="Series1" XValueMember="Wage_Year" YValueMembers="WageTotal">
+                            </asp:Series>
+                        </series>
+                        <chartareas>
+                            <asp:ChartArea Name="ChartArea1">
+                            </asp:ChartArea>
+                        </chartareas>
+                    </asp:Chart>
+                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [Empl_Name], [Wage_Year], [WageTotal] FROM [vw_EmployeeYearlyWages] WHERE ([Empl_Name] = @Empl_Name)">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="DropDownList1" DefaultValue="" Name="Empl_Name" PropertyName="SelectedValue" Type="String" />
+                        </SelectParameters>
+                    </asp:SqlDataSource>
                 </td>
         </tr>
         <tr>
+            <td style="width: 373px">&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
+            <td style="width: 373px">
+                <asp:Button ID="Button1" runat="server" PostBackUrl="~/Reports.aspx" Text="Close Report" />
+            </td>
             <td>
-            <input type="submit" name="ctl00$MainContent$Button1" value="Close Report" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$MainContent$Button1&quot;, &quot;&quot;, false, &quot;&quot;, &quot;EWTA_Reports.aspx&quot;, false, false))" id="MainContent_Button1" style="width:181px;">
-                    </td>
+                &nbsp;</td>
         </tr>
         <tr>
-            <td>
+            <td style="width: 373px">
                     
                     </td>
+            <td>
+                    
+                    &nbsp;</td>
         </tr>
         <tr>
-            <td>
+            <td style="width: 373px">
                     
                 </td>
+            <td>
+                    
+                &nbsp;</td>
         </tr>
     </tbody></table>
 
-            <hr>
-            <footer>
-                <p>© 2026 - ASP.NET Application</p>
-            </footer>
         </div>
 </asp:Content>
 
