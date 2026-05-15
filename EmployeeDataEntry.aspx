@@ -18,17 +18,17 @@
                     </td>
             <td style="width: 158px">Last Name:</td>
             <td>
-                        &nbsp;<asp:TextBox ID="TextBox2" runat="server" Width="158px"></asp:TextBox>
+                        <asp:TextBox ID="TextBox2" runat="server" Width="158px"></asp:TextBox>
                     </td>
         </tr>
         <tr>
             <td style="width: 168px">Birth Date:</td>
             <td style="width: 135px">
-                        &nbsp;<asp:TextBox ID="TextBox10" runat="server" TextMode="Date"></asp:TextBox>
+                        <asp:TextBox ID="TextBox10" runat="server" TextMode="Date"></asp:TextBox>
                     </td>
             <td style="width: 158px">Start Date:</td>
             <td>
-                        &nbsp;<asp:TextBox ID="TextBox13" runat="server" TextMode="Date"></asp:TextBox>
+                        <asp:TextBox ID="TextBox13" runat="server" TextMode="Date"></asp:TextBox>
                     </td>
         </tr>
         <tr>
@@ -65,13 +65,13 @@
                     </td>
             <td style="width: 158px">Cell Phone:</td>
             <td>
-                        &nbsp;<asp:TextBox ID="TextBox4" runat="server" Width="154px"></asp:TextBox>
+                        <asp:TextBox ID="TextBox4" runat="server" Width="154px"></asp:TextBox>
                     </td>
         </tr>
         <tr>
             <td style="width: 168px">Address:</td>
             <td>
-                        &nbsp;<asp:TextBox ID="TextBox7" runat="server" Width="316px"></asp:TextBox>
+                        <asp:TextBox ID="TextBox7" runat="server" Width="316px"></asp:TextBox>
                     </td>
             <td>
                         &nbsp;</td>
@@ -81,22 +81,30 @@
         <tr>
             <td style="height: 20px; width: 168px;">City:</td>
             <td style="height: 20px; width: 135px;">
-                        &nbsp;<asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
                     </td>
             <td style="height: 20px; width: 158px;">Province:</td>
             <td style="height: 20px">
-                        &nbsp;<asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
                     </td>
         </tr>
         <tr>
-            <td style="width: 168px">CV Info:</td>
-            <td>
-                        &nbsp;<asp:TextBox ID="TextBox12" runat="server" Height="112px" Width="543px"></asp:TextBox>
+            <td style="width: 168px" rowspan="2">CV Info:</td>
+            <td rowspan="2">
+                        <asp:TextBox ID="TextBox12" runat="server" Height="112px" Width="543px"></asp:TextBox>
                     </td>
             <td>
-                        &nbsp;</td>
+                        CV Web:</td>
             <td>
-                        &nbsp;</td>
+                        <asp:TextBox ID="TextBox14" runat="server"></asp:TextBox>
+                    </td>
+        </tr>
+        <tr>
+            <td>
+                        CV File:</td>
+            <td>
+                        <asp:TextBox ID="TextBox15" runat="server"></asp:TextBox>
+                    </td>
         </tr>
         <tr>
             <td style="width: 168px; height: 19px;"></td>
@@ -115,7 +123,7 @@
                         &nbsp;<asp:Button ID="Button2" runat="server" Text="Close Form" PostBackUrl="~/Forms.aspx" />
                     </td>
             <td>
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" DeleteCommand="DELETE FROM [tbl_Employees] WHERE [Empl_ID] = @Empl_ID" InsertCommand="INSERT INTO [tbl_Employees] ([Empl_FName], [Empl_LName], [Empl_BDate], [Empl_Start_Date], [Empl_Address], [Empl_City], [Empl_Province], [Empl_Cell], [Dept_ID], [Gender_ID], [Title_ID], [Empl_Email], [Is_Empl_Active], [Empl_CV]) VALUES (@Empl_FName, @Empl_LName, @Empl_BDate, @Empl_Start_Date, @Empl_Address, @Empl_City, @Empl_Province, @Empl_Cell, @Dept_ID, @Gender_ID, @Title_ID, @Empl_Email, @Is_Empl_Active, @Empl_CV)" SelectCommand="SELECT [Empl_ID], [Empl_FName], [Empl_LName], [Empl_BDate], [Empl_Start_Date], [Empl_Address], [Empl_City], [Empl_Province], [Empl_Cell], [Dept_ID], [Gender_ID], [Title_ID], [Empl_Email], [Is_Empl_Active], [Empl_CV] FROM [tbl_Employees]" UpdateCommand="UPDATE [tbl_Employees] SET [Empl_FName] = @Empl_FName, [Empl_LName] = @Empl_LName, [Empl_BDate] = @Empl_BDate, [Empl_Start_Date] = @Empl_Start_Date, [Empl_Address] = @Empl_Address, [Empl_City] = @Empl_City, [Empl_Province] = @Empl_Province, [Empl_Cell] = @Empl_Cell, [Dept_ID] = @Dept_ID, [Gender_ID] = @Gender_ID, [Title_ID] = @Title_ID, [Empl_Email] = @Empl_Email, [Is_Empl_Active] = @Is_Empl_Active, [Empl_CV] = @Empl_CV WHERE [Empl_ID] = @Empl_ID">
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" DeleteCommand="DELETE FROM [tbl_Employees] WHERE [Empl_ID] = @Empl_ID" InsertCommand="INSERT INTO [tbl_Employees] ([Empl_FName], [Empl_LName], [Empl_BDate], [Empl_Start_Date], [Empl_Address], [Empl_City], [Empl_Province], [Empl_Cell], [Dept_ID], [Gender_ID], [Title_ID], [Empl_Email], [Is_Empl_Active], [Empl_CV], [Empl_CV_File], [Empl_CV_Web]) VALUES (@Empl_FName, @Empl_LName, @Empl_BDate, @Empl_Start_Date, @Empl_Address, @Empl_City, @Empl_Province, @Empl_Cell, @Dept_ID, @Gender_ID, @Title_ID, @Empl_Email, @Is_Empl_Active, @Empl_CV, @Empl_CV_File, @Empl_CV_Web)" SelectCommand="SELECT [Empl_ID], [Empl_FName], [Empl_LName], [Empl_BDate], [Empl_Start_Date], [Empl_Address], [Empl_City], [Empl_Province], [Empl_Cell], [Dept_ID], [Gender_ID], [Title_ID], [Empl_Email], [Is_Empl_Active], [Empl_CV], [Empl_CV_File], [Empl_CV_Web] FROM [tbl_Employees]" UpdateCommand="UPDATE [tbl_Employees] SET [Empl_FName] = @Empl_FName, [Empl_LName] = @Empl_LName, [Empl_BDate] = @Empl_BDate, [Empl_Start_Date] = @Empl_Start_Date, [Empl_Address] = @Empl_Address, [Empl_City] = @Empl_City, [Empl_Province] = @Empl_Province, [Empl_Cell] = @Empl_Cell, [Dept_ID] = @Dept_ID, [Gender_ID] = @Gender_ID, [Title_ID] = @Title_ID, [Empl_Email] = @Empl_Email, [Is_Empl_Active] = @Is_Empl_Active, [Empl_CV] = @Empl_CV, [Empl_CV_File] = @Empl_CV_File, [Empl_CV_Web] = @Empl_CV_Web WHERE [Empl_ID] = @Empl_ID">
                     <DeleteParameters>
                         <asp:Parameter Name="Empl_ID" Type="Int32" />
                     </DeleteParameters>
@@ -134,6 +142,8 @@
                         <asp:Parameter Name="Empl_Email" Type="String" />
                         <asp:Parameter Name="Is_Empl_Active" Type="Boolean" />
                         <asp:Parameter Name="Empl_CV" Type="String" />
+                        <asp:Parameter Name="Empl_CV_File" Type="String" />
+                        <asp:Parameter Name="Empl_CV_Web" Type="String" />
                     </InsertParameters>
                     <UpdateParameters>
                         <asp:Parameter Name="Empl_FName" Type="String" />
@@ -150,6 +160,8 @@
                         <asp:Parameter Name="Empl_Email" Type="String" />
                         <asp:Parameter Name="Is_Empl_Active" Type="Boolean" />
                         <asp:Parameter Name="Empl_CV" Type="String" />
+                        <asp:Parameter Name="Empl_CV_File" Type="String" />
+                        <asp:Parameter Name="Empl_CV_Web" Type="String" />
                         <asp:Parameter Name="Empl_ID" Type="Int32" />
                     </UpdateParameters>
                 </asp:SqlDataSource>

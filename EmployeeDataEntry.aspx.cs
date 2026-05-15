@@ -28,6 +28,8 @@ public partial class EmployeeDataEntry : System.Web.UI.Page
             SqlDataSource1.InsertParameters["Empl_City"].DefaultValue = TextBox6.Text;
             SqlDataSource1.InsertParameters["Empl_Province"].DefaultValue = TextBox5.Text;
             SqlDataSource1.InsertParameters["Empl_CV"].DefaultValue= TextBox12.Text;
+            SqlDataSource1.InsertParameters["Empl_CV_Web"].DefaultValue= TextBox14.Text;
+            SqlDataSource1.InsertParameters["Empl_CV_File"].DefaultValue= TextBox15.Text;
 
             bool d = false;
             if (CheckBox1.Checked == true)

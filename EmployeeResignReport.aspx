@@ -14,15 +14,15 @@
             <td>
                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Empl_ID" DataSourceID="SqlDataSource1" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="1113px">
                     <Columns>
-                        <asp:BoundField DataField="Empl_ID" HeaderText="Employee ID" InsertVisible="False" ReadOnly="True" SortExpression="Empl_ID" />
+                        <asp:BoundField DataField="Empl_ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="Empl_ID" />
                         <asp:BoundField DataField="Empl_Name" HeaderText="Name" ReadOnly="True" SortExpression="Empl_Name" />
                         <asp:BoundField DataField="Empl_Start_Date" HeaderText="Start Date" SortExpression="Empl_Start_Date" />
                         <asp:BoundField DataField="Empl_Left_Date" HeaderText="Left Date" SortExpression="Empl_Left_Date" />
-                        <asp:BoundField DataField="Empl_Left_Reason" HeaderText="Resign Reason" SortExpression="Empl_Left_Reason" />
-                        <asp:BoundField DataField="Empl_Cell" HeaderText="Cell Phone" SortExpression="Empl_Cell" />
+                        <asp:BoundField DataField="Empl_Left_Reason" HeaderText="Leaving Reason" SortExpression="Empl_Left_Reason" />
+                        <asp:BoundField DataField="Empl_Cell" HeaderText="Cell" SortExpression="Empl_Cell" />
                         <asp:BoundField DataField="Empl_Email" HeaderText="Email" SortExpression="Empl_Email" />
-                        <asp:BoundField DataField="Dept_ID" HeaderText="Department" SortExpression="Dept_ID" />
-                        <asp:BoundField DataField="Title_ID" HeaderText="Title" SortExpression="Title_ID" />
+                        <asp:BoundField DataField="Dept_Name" HeaderText="Dept Name" SortExpression="Dept_Name" />
+                        <asp:BoundField DataField="Title" HeaderText="Title" SortExpression="Title" />
                     </Columns>
                     <FooterStyle BackColor="White" ForeColor="#000066" />
                     <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
@@ -34,7 +34,7 @@
                     <SortedDescendingCellStyle BackColor="#CAC9C9" />
                     <SortedDescendingHeaderStyle BackColor="#00547E" />
                 </asp:GridView>
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT Empl_ID, Empl_Name, Empl_Start_Date, Empl_Left_Date, Empl_Left_Reason, Empl_Cell, Empl_Email, Dept_ID, Title_ID FROM tbl_Employees WHERE (Is_Empl_Active = 0)"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT tbl_Employees.Empl_ID, tbl_Employees.Empl_Name, tbl_Employees.Empl_Start_Date, tbl_Employees.Empl_Left_Date, tbl_Employees.Empl_Left_Reason, tbl_Employees.Empl_Cell, tbl_Employees.Empl_Email, tbl_Departments.Dept_Name, tbl_Lookups.Title FROM tbl_Departments INNER JOIN tbl_Employees ON tbl_Departments.Dept_ID = tbl_Employees.Dept_ID INNER JOIN tbl_Lookups ON tbl_Employees.Title_ID = tbl_Lookups.LK_ID WHERE (tbl_Employees.Is_Empl_Active = 0)"></asp:SqlDataSource>
             </td>
         </tr>
         <tr>

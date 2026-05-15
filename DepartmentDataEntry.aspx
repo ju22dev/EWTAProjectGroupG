@@ -15,16 +15,16 @@
             <tr>
                 <td colspan="3">
 
-                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Dept_ID" DataSourceID="SqlDataSource1" Width="619px">
+                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" Width="619px">
                         <Columns>
                             <asp:CommandField ShowEditButton="True" />
-                            <asp:BoundField DataField="Dept_ID" HeaderText="Dept_ID" InsertVisible="False" ReadOnly="True" SortExpression="Dept_ID" />
-                            <asp:BoundField DataField="Dept_Name" HeaderText="Dept_Name" SortExpression="Dept_Name" />
-                            <asp:BoundField DataField="Dept_Phone" HeaderText="Dept_Phone" SortExpression="Dept_Phone" />
-                            <asp:BoundField DataField="Manager_ID" HeaderText="Manager_ID" SortExpression="Manager_ID" />
+                            <asp:BoundField DataField="Dept_ID" HeaderText="Dept ID" InsertVisible="False" ReadOnly="True" SortExpression="Dept_ID" />
+                            <asp:BoundField DataField="Dept_Name" HeaderText="Dept Name" SortExpression="Dept_Name" />
+                            <asp:BoundField DataField="Dept_Phone" HeaderText="Dept Phone" SortExpression="Dept_Phone" />
+                            <asp:BoundField DataField="Empl_Name" HeaderText="Manager Name" SortExpression="Empl_Name" ReadOnly="True" />
                         </Columns>
                     </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" DeleteCommand="DELETE FROM [tbl_Departments] WHERE [Dept_ID] = @Dept_ID" InsertCommand="INSERT INTO [tbl_Departments] ([Dept_Name], [Dept_Phone], [Manager_ID]) VALUES (@Dept_Name, @Dept_Phone, @Manager_ID)" SelectCommand="SELECT [Dept_ID], [Dept_Name], [Dept_Phone], [Manager_ID] FROM [tbl_Departments]" UpdateCommand="UPDATE [tbl_Departments] SET [Dept_Name] = @Dept_Name, [Dept_Phone] = @Dept_Phone, [Manager_ID] = @Manager_ID WHERE [Dept_ID] = @Dept_ID">
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" DeleteCommand="DELETE FROM [tbl_Departments] WHERE [Dept_ID] = @Dept_ID" InsertCommand="INSERT INTO [tbl_Departments] ([Dept_Name], [Dept_Phone], [Manager_ID]) VALUES (@Dept_Name, @Dept_Phone, @Manager_ID)" SelectCommand="SELECT tbl_Departments.Dept_ID, tbl_Departments.Dept_Name, tbl_Departments.Dept_Phone, vw_ManagerList.Empl_Name FROM tbl_Departments INNER JOIN vw_ManagerList ON tbl_Departments.Manager_ID = vw_ManagerList.Empl_ID" UpdateCommand="UPDATE [tbl_Departments] SET [Dept_Name] = @Dept_Name, [Dept_Phone] = @Dept_Phone, [Manager_ID] = @Manager_ID WHERE [Dept_ID] = @Dept_ID">
                         <DeleteParameters>
                             <asp:Parameter Name="Dept_ID" Type="Int32" />
                         </DeleteParameters>

@@ -118,7 +118,8 @@ optgroup,
 select,
 textarea {
   color: inherit;
-  margin: 0 0 0 61px;
+  font: inherit;
+  margin: 0;
 }
 button {
   overflow: visible;
@@ -133,7 +134,6 @@ input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   cursor: pointer;
-    text-align: left;
 }
 button[disabled],
 html input[disabled] {
@@ -190,7 +190,6 @@ table {
 td,
 th {
   padding: 0;
-    text-align: left;
 }
 /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 @media print {
@@ -2349,7 +2348,6 @@ pre code {
 }
 table {
   background-color: transparent;
-    font-size: x-small;
 }
 table col[class*="col-"] {
   position: static;
@@ -4185,7 +4183,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   margin-left: 0;
 }
 .nav-justified {
-  width: 99%;
+  width: 100%;
 }
 .nav-justified > li {
   float: none;

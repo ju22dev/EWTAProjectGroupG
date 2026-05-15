@@ -20,32 +20,32 @@
 			<td style="width: 359px">
                 <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="Empl_ID" DataSourceID="SqlDataSource2" Height="50px" Width="706px">
                     <Fields>
-                        <asp:BoundField DataField="Empl_ID" HeaderText="Empl_ID" InsertVisible="False" ReadOnly="True" SortExpression="Empl_ID" />
-                        <asp:BoundField DataField="Empl_FName" HeaderText="Empl_FName" SortExpression="Empl_FName" />
-                        <asp:BoundField DataField="Empl_LName" HeaderText="Empl_LName" SortExpression="Empl_LName" />
-                        <asp:BoundField DataField="Empl_BDate" HeaderText="Empl_BDate" SortExpression="Empl_BDate" />
-                        <asp:BoundField DataField="Empl_Start_Date" HeaderText="Empl_Start_Date" SortExpression="Empl_Start_Date" />
-                        <asp:BoundField DataField="Empl_Left_Date" HeaderText="Empl_Left_Date" SortExpression="Empl_Left_Date" />
-                        <asp:BoundField DataField="Empl_Left_Reason" HeaderText="Empl_Left_Reason" SortExpression="Empl_Left_Reason" />
-                        <asp:BoundField DataField="Empl_Address" HeaderText="Empl_Address" SortExpression="Empl_Address" />
-                        <asp:BoundField DataField="Empl_City" HeaderText="Empl_City" SortExpression="Empl_City" />
-                        <asp:BoundField DataField="Empl_Province" HeaderText="Empl_Province" SortExpression="Empl_Province" />
-                        <asp:BoundField DataField="Empl_Phone" HeaderText="Empl_Phone" SortExpression="Empl_Phone" />
-                        <asp:BoundField DataField="Empl_Cell" HeaderText="Empl_Cell" SortExpression="Empl_Cell" />
-                        <asp:BoundField DataField="Dept_ID" HeaderText="Dept_ID" SortExpression="Dept_ID" />
-                        <asp:BoundField DataField="Gender_ID" HeaderText="Gender_ID" SortExpression="Gender_ID" />
-                        <asp:BoundField DataField="Title_ID" HeaderText="Title_ID" SortExpression="Title_ID" />
-                        <asp:BoundField DataField="Empl_Wage" HeaderText="Empl_Wage" SortExpression="Empl_Wage" />
-                        <asp:BoundField DataField="Empl_Commission_Rate" HeaderText="Empl_Commission_Rate" SortExpression="Empl_Commission_Rate" />
-                        <asp:BoundField DataField="Empl_Email" HeaderText="Empl_Email" SortExpression="Empl_Email" />
-                        <asp:BoundField DataField="Empl_TCN" HeaderText="Empl_TCN" SortExpression="Empl_TCN" />
-                        <asp:CheckBoxField DataField="Is_Empl_Active" HeaderText="Is_Empl_Active" SortExpression="Is_Empl_Active" />
-                        <asp:CheckBoxField DataField="Is_Empl_Manager" HeaderText="Is_Empl_Manager" SortExpression="Is_Empl_Manager" />
-                        <asp:BoundField DataField="Empl_CV" HeaderText="Empl_CV" SortExpression="Empl_CV" />
-                        <asp:BoundField DataField="Empl_CV_File" HeaderText="Empl_CV_File" SortExpression="Empl_CV_File" />
-                        <asp:BoundField DataField="Empl_CV_Web" HeaderText="Empl_CV_Web" SortExpression="Empl_CV_Web" />
-                        <asp:BoundField DataField="Entered_By" HeaderText="Entered_By" SortExpression="Entered_By" />
-                        <asp:BoundField DataField="Entered_Date" HeaderText="Entered_Date" SortExpression="Entered_Date" />
+                        <asp:BoundField DataField="Empl_ID" HeaderText="Employee ID" InsertVisible="False" ReadOnly="True" SortExpression="Empl_ID" />
+                        <asp:BoundField DataField="Empl_FName" HeaderText="First Name" SortExpression="Empl_FName" />
+                        <asp:BoundField DataField="Empl_LName" HeaderText="Last Name" SortExpression="Empl_LName" />
+                        <asp:BoundField DataField="Empl_BDate" HeaderText="DOB" SortExpression="Empl_BDate" />
+                        <asp:BoundField DataField="Empl_Start_Date" HeaderText="Start Date" SortExpression="Empl_Start_Date" />
+                        <asp:BoundField DataField="Empl_Left_Date" HeaderText="Left Date" SortExpression="Empl_Left_Date" />
+                        <asp:BoundField DataField="Empl_Left_Reason" HeaderText="Leaving Reason" SortExpression="Empl_Left_Reason" />
+                        <asp:BoundField DataField="Empl_Address" HeaderText="Address" SortExpression="Empl_Address" />
+                        <asp:BoundField DataField="Empl_City" HeaderText="City" SortExpression="Empl_City" />
+                        <asp:BoundField DataField="Empl_Province" HeaderText="Province" SortExpression="Empl_Province" />
+                        <asp:BoundField DataField="Empl_Phone" HeaderText="Phone" SortExpression="Empl_Phone" />
+                        <asp:BoundField DataField="Empl_Cell" HeaderText="Cell" SortExpression="Empl_Cell" />
+                        <asp:BoundField DataField="Dept_ID" HeaderText="Dept Id" SortExpression="Dept_ID" />
+                        <asp:BoundField DataField="Gender_ID" HeaderText="Gender" SortExpression="Gender_ID" />
+                        <asp:BoundField DataField="Title_ID" HeaderText="Title" SortExpression="Title_ID" />
+                        <asp:BoundField DataField="Empl_Wage" HeaderText="Wage" SortExpression="Empl_Wage" />
+                        <asp:BoundField DataField="Empl_Commission_Rate" HeaderText="Commission Rate" SortExpression="Empl_Commission_Rate" />
+                        <asp:BoundField DataField="Empl_Email" HeaderText="Email" SortExpression="Empl_Email" />
+                        <asp:BoundField DataField="Empl_TCN" HeaderText="TCN" SortExpression="Empl_TCN" />
+                        <asp:CheckBoxField DataField="Is_Empl_Active" HeaderText="Is Active?" SortExpression="Is_Empl_Active" />
+                        <asp:CheckBoxField DataField="Is_Empl_Manager" HeaderText="Is Manager?" SortExpression="Is_Empl_Manager" />
+                        <asp:BoundField DataField="Empl_CV" HeaderText="CV" SortExpression="Empl_CV" />
+                        <asp:BoundField DataField="Empl_CV_File" HeaderText="CV File" SortExpression="Empl_CV_File" />
+                        <asp:BoundField DataField="Empl_CV_Web" HeaderText="CV Web" SortExpression="Empl_CV_Web" />
+                        <asp:BoundField DataField="Entered_By" HeaderText="Entered By" SortExpression="Entered_By" />
+                        <asp:BoundField DataField="Entered_Date" HeaderText="Entered Date" SortExpression="Entered_Date" />
                         <asp:CommandField ShowEditButton="True" />
                     </Fields>
                 </asp:DetailsView>

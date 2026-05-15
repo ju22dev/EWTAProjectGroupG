@@ -28,8 +28,8 @@
 &nbsp;</td>
         </tr>
         <tr>
-            <td class="modal-sm" style="width: 201px">Paid Amount:</td>
-            <td>
+            <td class="modal-sm" style="width: 201px; height: 25px;">Paid Amount:</td>
+            <td style="height: 25px">
                     &nbsp;<asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
                 </td>
         </tr>
@@ -42,10 +42,9 @@
         <tr>
             <td class="modal-sm" style="width: 201px">Wage Month:</td>
             <td>
-                    &nbsp;<asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource2" DataTextField="Column1" DataValueField="Column1">
+                    &nbsp;<asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource2" DataTextField="Month" DataValueField="LK_ID">
                     </asp:DropDownList>
-                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT 1 UNION SELECT 2 UNION SELECT 3 UNION SELECT 4 UNION SELECT 5 UNION SELECT 6
-UNION SELECT 7 UNION SELECT 8 UNION SELECT 9 UNION SELECT 10 UNION SELECT 11 UNION SELECT 12"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [LK_ID], [Month] FROM [tbl_Lookups]"></asp:SqlDataSource>
                 </td>
         </tr>
         <tr>

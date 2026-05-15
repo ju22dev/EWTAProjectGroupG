@@ -22,11 +22,11 @@
                             <AlternatingRowStyle BackColor="White" />
                             <Columns>
                                 <asp:CommandField ShowEditButton="True" />
-                                <asp:BoundField DataField="Wage_ID" HeaderText="Wage_ID" SortExpression="Wage_ID" InsertVisible="False" ReadOnly="True" />
-                                <asp:BoundField DataField="Wage_Date" HeaderText="Wage_Date" SortExpression="Wage_Date" />
-                                <asp:BoundField DataField="Month_ID" HeaderText="Month_ID" SortExpression="Month_ID" />
-                                <asp:BoundField DataField="Wage_Amount" HeaderText="Wage_Amount" SortExpression="Wage_Amount" />
-                                <asp:BoundField DataField="Wage_Commission" HeaderText="Wage_Commission" SortExpression="Wage_Commission" />
+                                <asp:BoundField DataField="Wage_ID" HeaderText="Wage ID" SortExpression="Wage_ID" InsertVisible="False" ReadOnly="True" />
+                                <asp:BoundField DataField="Wage_Date" HeaderText="Wage Date" SortExpression="Wage_Date" />
+                                <asp:BoundField DataField="Month_ID" HeaderText="Month" SortExpression="Month_ID" />
+                                <asp:BoundField DataField="Wage_Amount" HeaderText="Wage Amount" SortExpression="Wage_Amount" />
+                                <asp:BoundField DataField="Wage_Commission" HeaderText="Wage Commission" SortExpression="Wage_Commission" />
                             </Columns>
                             <EditRowStyle BackColor="#7C6F57" />
                             <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
